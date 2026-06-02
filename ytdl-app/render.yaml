@@ -2,8 +2,5 @@ services:
   - type: web
     name: ytgrab
     runtime: python
-    buildCommand: "pip install -r requirements.txt && apt-get install -y ffmpeg"
+    buildCommand: "apt-get install -y ffmpeg && pip install -r requirements.txt"
     startCommand: "python app.py"
-    envVars:
-      - key: PORT
-        value: 5757
